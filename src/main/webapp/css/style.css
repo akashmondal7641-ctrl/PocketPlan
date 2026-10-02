@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: #111827;
+    color: white;
+    padding: 28px 18px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 14px 35px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar nav a,
+.sidebar-bottom a {
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar-bottom a:hover,
+.sidebar nav a.active {
+    background: #1f2937;
+    color: white;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+
+/* MAIN */
+
+.main {
+    flex: 1;
+    padding: 35px;
+    max-width: 1500px;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.topbar p {
+    color: #6b7280;
+}
+
+
+/* BUTTON */
+
+.button {
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.card h2 {
+    margin-top: 12px;
+    font-size: 27px;
+}
+
+.balance-card {
+    background: #2563eb;
+    color: white;
+}
+
+.balance-card .card-title {
+    color: #dbeafe;
+}
+
+
+/* COLORS */
+
+.income {
+    color: #059669;
+}
+
+.expense {
+    color: #dc2626;
+}
+
+
+/* PANEL */
+
+.panel {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.05);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    margin-bottom: 5px;
+}
+
+.panel-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.panel-header a {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+
+/* TABLE */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+td {
+    font-size: 14px;
+}
+
+.empty {
+    text-align: center;
+    color: #9ca3af;
+    padding: 35px;
+}
+
+
+/* BADGES */
+
+.badge {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.income-badge {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.expense-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-actions h2 {
+    margin-bottom: 15px;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.quick-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.2s;
+}
+
+.quick-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.quick-card strong {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.quick-card span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .cards {
+        grid-template-columns:
+            1fr;
+    }
+
+    .quick-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .sidebar-bottom {
+        margin-top: 20px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .quick-grid {
+        grid-template-columns:
+            1fr;
+    }
+}

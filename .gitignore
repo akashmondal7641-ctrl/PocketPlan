@@ -1,0 +1,20 @@
+# Maven
+target/
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Tomcat
+logs/
+temp/
+work/
+
+# Local environment/configuration
+.env
+*.local
